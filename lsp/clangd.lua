@@ -1,5 +1,16 @@
 return {
-  cmd = { 'clangd' },
+  cmd = { 'clangd',
+    '/PATH/TO/CLANGD',
+    '-j=10',
+    '--background-index',
+    '--all-scopes-completion',
+    '--header-insertion=never',
+    '--pch-storage=disk',
+    '--log=info',
+    '--clang-tidy',
+    '--enable-config',
+    '--query-driver=/PATH/TO/Gcc/BIN/*'
+    },
   filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
   root_markers = {
     '.clangd',
@@ -7,7 +18,7 @@ return {
     '.clang-format',
     'compile_commands.json',
     'compile_flags.txt',
-    'configure.ac', -- AutoTools
+    'configure.ac',     
     '.git',
   },
   capabilities = {

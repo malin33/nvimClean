@@ -1,8 +1,6 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
---vim.opt.guicursor = ""
-
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -22,7 +20,12 @@ vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
 
 vim.opt.guicursor = ""
---vim.opt.colorcolumn = "80"
 
+-- timeout leaderkey
 vim.opt.timeoutlen=400
 
+vim.g.netrw_keepdir=0
+
+-- case insensitivity/smart for search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
