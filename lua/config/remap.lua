@@ -7,14 +7,14 @@ vim.keymap.set({ "n", "x"}, "<leader>y", [["+y]])
 vim.keymap.set({ "n", "x"}, "<leader>p", [["+p]]) 
 
 -- Browse old files, buffert
-vim.keymap.set({ 'n', '<leader>bo',function() vim.cmd('browse oldfiles') end, opt) 
-vim.keymap.set({ 'n', '<leader><S-TAB>', ':bn<CR>')
-vim.keymap.set({ 'n', '<leader><TAB>', ':bp<CR>')
-vim.keymap.set({ 'n', '<leader>bd', ':bd<CR>')
-vim.keymap.set({ 'n', '<leader>b', ':ls<CR>:b<space>'
+vim.keymap.set( 'n', '<leader>bo',function() vim.cmd('browse oldfiles') end, opt) 
+vim.keymap.set( 'n', '<leader><S-TAB>', ':bn<CR>')
+vim.keymap.set( 'n', '<leader><TAB>', ':bp<CR>')
+vim.keymap.set( 'n', '<leader>bd', ':bd<CR>')
+vim.keymap.set( 'n', '<leader>b', ':ls<CR>:b<space>')
 
 -- Format clang, save line nr and return to same after format
-vim.keymap.set({ 'n', '<leader>FF',function() 
+vim.keymap.set( 'n', '<leader>FF',function() 
     local lineno =vim.api.nvim_win_get_cursor(0)
     vim.cmd('%!clang-format -style:file="SOME PATH/.clang-format"') 
     vim.api.nvim_win_set_cursor(0,lineno)

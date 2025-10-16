@@ -6,7 +6,7 @@
 
 -- Base color 
 vim.cmd.colorscheme("sorbet")
-vim.api.nvim_set_hl(0, "Normal", { bg = "#0F2933"})
+vim.api.nvim_set_hl(0, "Normal", { fg=White, bg = "#121A25"})
 
 -- lsp highllight
 vim.api.nvim_set_hl(0, "@lsp.type.variable", { fg = "#91d7e3"})
@@ -16,15 +16,15 @@ vim.api.nvim_set_hl(0, "@lsp.type.property", { fg = "#89b4fa"})
 vim.api.nvim_set_hl(0, "@lsp.type.class", { fg = "#0F2933"})
 
 -- Syntax highlight
-vim.api.nvim_set_hl(0, "Comment", { bg = "#0F2933"})
-vim.api.nvim_set_hl(0, "String", { bg = "#0F2933"})
-vim.api.nvim_set_hl(0, "Number", { bg = "#0F2933"})
-vim.api.nvim_set_hl(0, "Boolean", { bg = "#0F2933"})
-vim.api.nvim_set_hl(0, "Identifier", { bg = "#0F2933"})
-vim.api.nvim_set_hl(0, "Function", { bg = "#0F2933"})
-vim.api.nvim_set_hl(0, "Conditional", { bg = "#0F2933"})
-vim.api.nvim_set_hl(0, "Repeat", { bg = "#0F2933"})
-vim.api.nvim_set_hl(0, "Type", { bg = "#0F2933"})
+vim.api.nvim_set_hl(0, "Comment", { fg = "#c6d0f5"})
+vim.api.nvim_set_hl(0, "String", { fg = "#a6e3a1"})
+vim.api.nvim_set_hl(0, "Number", { fg = "#fab387"})
+vim.api.nvim_set_hl(0, "Boolean", { fg = "#fab387"})
+vim.api.nvim_set_hl(0, "Identifier", { fg = "#89b4fa"})
+vim.api.nvim_set_hl(0, "Function", { fg = "#89b4fa"})
+vim.api.nvim_set_hl(0, "Conditional", { fg = "#eba0ac"})
+vim.api.nvim_set_hl(0, "Repeat", { fg = "#eba0ac"})
+vim.api.nvim_set_hl(0, "Type", { fg = "#f9e2af"})
 
 -- Other parameters (taken from cattpuccin)
 		-- Comment = { fg = C.overlay2, style = O.styles.comments }, -- just comments
