@@ -13,7 +13,7 @@ vim.api.nvim_set_hl(0, "@lsp.type.variable", { fg = "#91d7e3"})
 vim.api.nvim_set_hl(0, "@lsp.type.parameter", { fg = "#f5a97f"})
 vim.api.nvim_set_hl(0, "@lsp.type.method", { fg = "#cba6f7"})
 vim.api.nvim_set_hl(0, "@lsp.type.property", { fg = "#89b4fa"})
-vim.api.nvim_set_hl(0, "@lsp.type.class", { fg = "#0F2933"})
+vim.api.nvim_set_hl(0, "@lsp.type.class", { fg = "#89b4fa"})
 
 -- Syntax highlight
 vim.api.nvim_set_hl(0, "Comment", { fg = "#c6d0f5"})

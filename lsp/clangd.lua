@@ -1,15 +1,15 @@
 return {
   cmd = { 'clangd',
-    '/PATH/TO/CLANGD',
+    --'/usr/bin/clangd',
     '-j=10',
     '--background-index',
     '--all-scopes-completion',
     '--header-insertion=never',
     '--pch-storage=disk',
-    '--log=info',
+    '--log=verbose',
     '--clang-tidy',
     '--enable-config',
-    '--query-driver=/PATH/TO/Gcc/BIN/*'
+    -- '--query-driver=/PATH/TO/Gcc/BIN/*'
     },
   filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
   root_markers = {
