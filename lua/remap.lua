@@ -32,3 +32,9 @@ vim.keymap.set("n", "<leader>ff", function()
     vim.cmd(":set path+=/SOME/PATH/*")
     return ":find **/*"
 end,{expr=true})
+
+vim.cmd("command DiffOrig vert new | set buftype=nofile | read ++edit # | silent 0d_ | diffthis | wincmd p | diffthis")
+vim.keymap.set("n", "<leader>do", function()
+    vim.cmd(":DiffOrig")
+end,opt)
+
