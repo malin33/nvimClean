@@ -16,7 +16,7 @@ vim.keymap.set( 'n', '<leader>b', ':ls<CR>:b<space>')
 -- Format clang, save line nr and return to same after format
 vim.keymap.set( 'n', '<leader>FF',function() 
     local lineno =vim.api.nvim_win_get_cursor(0)
-    vim.cmd('%!clang-format -style:file="SOME PATH/.clang-format"') 
+    vim.cmd('%!clang-format -style="{BasedOnStyle: Google, BreakBeforeBraces: Stroustrup}"') 
     vim.api.nvim_win_set_cursor(0,lineno)
 end, opt) 
 
