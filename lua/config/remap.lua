@@ -16,23 +16,26 @@ vim.keymap.set( 'n', '<leader>b', ':ls<CR>:b<space>')
 -- Format clang, save line nr and return to same after format
 vim.keymap.set( 'n', '<leader>FF',function() 
     local lineno =vim.api.nvim_win_get_cursor(0)
-    vim.cmd('%!clang-format -style="{BasedOnStyle: Google, BreakBeforeBraces: Stroustrup}"') 
+    local cmdString=":%!clang-format -style=file:"..string.format("%s.clang-format",vim.env.repoPath)
+    local alternativeCmdString='%!clang-format -style="{BasedOnStyle: Google, BreakBeforeBraces: Stroustrup}"'
+
+    vim.cmd(alternativeCmdString)
     vim.api.nvim_win_set_cursor(0,lineno)
 end, opt) 
 
 -- String search for c++ files using vimgrep
 vim.keymap.set("n", "<leader>fs", function()
-    local user_input = vim.fn.input("Find String: ")
-    vim.cmd(string.format(":vim! /%s/jg /SOME/PATH/**/*{cc,cpp,h}", user_input))
+    local user_input = vim.fn.input("vimgrep string *{cc,cpp,h}: ")
+    vim.cmd(string.format(":vim! /%s/jg %s**/*{cc,cpp,h}", user_input, vim.env.repoPath))
     vim.cmd(":copen")
 end,opt)
 
 -- Search file in Path
 vim.keymap.set("n", "<leader>ff", function()
-    vim.cmd(":set path+=/SOME/PATH/*")
     return ":find **/*"
 end,{expr=true})
 
+-- diff buff with saved file
 vim.cmd("command DiffOrig vert new | set buftype=nofile | read ++edit # | silent 0d_ | diffthis | wincmd p | diffthis")
 vim.keymap.set("n", "<leader>do", function()
     vim.cmd(":DiffOrig")
